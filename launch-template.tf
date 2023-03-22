@@ -13,7 +13,7 @@ resource "aws_launch_template" "template" {
 
   instance_type = "t3.micro"
 
-  Here we are given subnet ids instead of avaialability zones in which instances cana be launched by auto-scaling group
+#  Here we are given subnet ids instead of avaialability zones in which instances cana be launched by auto-scaling group
 #  placement {
 #    availability_zone = "us-west-2a"
 #  }
