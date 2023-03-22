@@ -11,7 +11,7 @@ resource "aws_launch_template" "template" {
     market_type = "spot"
   }
 
-  instance_type = "var.INSTANCE_TYPE"
+  instance_type = var.INSTANCE_TYPE
 
 #  Here we are given subnet ids instead of availability zones in which instances can be launched by auto-scaling group
 #  placement {
