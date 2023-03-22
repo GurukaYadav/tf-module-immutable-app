@@ -5,3 +5,8 @@ variable "PRIVATE_SUBNET_ID" {}
 variable "AGS_DESIRED" {}
 variable "AGS_MAX" {}
 variable "AGS_MIN" {}
+variable "PROMETHEUS_IP" {}
+variable "WORKSTATION_IP" {}
+variable "PRIVATE_SUBNET_CIDR" {}
+variable "SSH_PORT" {}
+variable "PORT" {}
