@@ -1,9 +1,14 @@
 resource "aws_launch_template" "template" {
   name_prefix = "auto-scaling-launch-template"
 
-  tags = {
-    Name = "${local.TAG_NAME}-launch-template"
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name = local.TAG_NAME
+    }
   }
+
 
   iam_instance_profile {
     name = aws_iam_instance_profile.profile.name
