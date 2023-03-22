@@ -36,7 +36,14 @@ resource "aws_launch_template" "template" {
     }
   }
 
-  user_data = filebase64("${path.module}/userdata.sh", {
+  user_data = base64encode(templatefile("${path.module}/userdata.sh", {
+    ENV                    = var.ENV
+    DOCDB_ENDPOINT         = var.DOCDB_ENDPOINT
+    DOCDB_USER             = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USER"]
+    DOCDB_PASS             = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_PASS"]
+    RABBITMQ_USER_PASSWORD = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["RABBITMQ_USER_PASSWORD"]
+    RDS_ENDPOINT           = var.RDS_ENDPOINT
+    REDIS_ENDPOINT         = var.REDIS_ENDPOINT
 
-  })
+  }))
 }
