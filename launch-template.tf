@@ -1,6 +1,6 @@
 resource "aws_launch_template" "template" {
-  name_prefix = "${local.TAG_NAME}-lt"
-  
+  name = "${local.TAG_NAME}-lt"
+
   iam_instance_profile {
     name = aws_iam_instance_profile.profile.name
   }
