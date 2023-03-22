@@ -1,5 +1,5 @@
 resource "aws_launch_template" "template" {
-  name = "auto-scaling-launch-template"
+  name_prefix = "auto-scaling-launch-template"
 
   tags = {
     Name = "${local.TAG_NAME}-launch-template"
