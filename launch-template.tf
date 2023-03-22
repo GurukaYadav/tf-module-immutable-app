@@ -29,7 +29,7 @@ resource "aws_launch_template" "template" {
   }
 
   tag_specifications {
-    resource_type = "spot_fleet_request"
+    resource_type = "spot-instances-request"
 
     tags = {
       Name = local.TAG_NAME
