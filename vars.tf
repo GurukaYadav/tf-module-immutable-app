@@ -10,3 +10,5 @@ variable "WORKSTATION_IP" {}
 variable "PRIVATE_SUBNET_CIDR" {}
 variable "SSH_PORT" {}
 variable "PORT" {}
+variable "INSTANCE_TYPE" {}
+variable "VPC_ID" {}
