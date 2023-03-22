@@ -12,3 +12,9 @@ variable "SSH_PORT" {}
 variable "PORT" {}
 variable "INSTANCE_TYPE" {}
 variable "VPC_ID" {}
+variable "PRIVATE_LISTENER_ARN" {}
+variable "LB_ARN" {}
+variable "LB_TYPE" {}
+variable "PRIVATE_HOSTED_ZONE_ID" {}
+variable "PRIVATE_LB_DNS_NAME" {}
+variable "PROJECT" {}
