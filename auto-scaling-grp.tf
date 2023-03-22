@@ -23,5 +23,5 @@ resource "aws_autoscaling_policy" "cpu-tracking-policy" {
     }
     target_value = 50.0
   }
-  autoscaling_group_name = aws_autoscaling_group.asg.name
+  autoscaling_group_name = aws_autoscaling_group.auto_scale.name
 }
