@@ -13,17 +13,26 @@ resource "aws_launch_template" "template" {
 
   instance_type = "t3.micro"
 
-  placement {
-    availability_zone = "us-west-2a"
-  }
+  Here we are given subnet ids instead of avaialability zones in which instances cana be launched by auto-scaling group
+#  placement {
+#    availability_zone = "us-west-2a"
+#  }
 
-  vpc_security_group_ids = ["sg-12345678"]
+  vpc_security_group_ids = [aws_security_group.sg.id]
 
   tag_specifications {
     resource_type = "instance"
 
     tags = {
-      Name = "test"
+      Name = local.TAG_NAME
+    }
+  }
+
+  tag_specifications {
+    resource_type = "spot_fleet_request"
+
+    tags = {
+      Name = local.TAG_NAME
     }
   }
 

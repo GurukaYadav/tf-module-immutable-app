@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "policy" {
   name        = "${local.TAG_NAME}-iam-policy"
   path        = "/"
-  description = "Policy to the rabbitmq db-instance to access password from the aws secret manager"
+  description = "Policy to access passwords from the aws secret manager"
 
   policy = jsonencode({
     "Version": "2012-10-17",
