@@ -14,11 +14,12 @@ resource "aws_lb_target_group" "target-grp" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "attach" {
-  count = var.INSTANCE_COUNT
-  target_group_arn = aws_lb_target_group.target-grp.arn
-  target_id        = aws_spot_instance_request.instance.*.spot_instance_id[count.index]
-  port             = var.PORT
-}
+#Here we dont need to attch the certed instances to the target , they are attached by default by the auto-scaling group
+#resource "aws_lb_target_group_attachment" "attach" {
+#  count = var.INSTANCE_COUNT
+#  target_group_arn = aws_lb_target_group.target-grp.arn
+#  target_id        = aws_spot_instance_request.instance.*.spot_instance_id[count.index]
+#  port             = var.PORT
+#}
 
 //attaching instances to target group
