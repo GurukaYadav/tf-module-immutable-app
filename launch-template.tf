@@ -25,6 +25,7 @@ resource "aws_launch_template" "template" {
 
     tags = {
       Name = local.TAG_NAME
+      Monitor = "Yes"
     }
   }
 
