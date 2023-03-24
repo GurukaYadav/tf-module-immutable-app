@@ -45,6 +45,5 @@ resource "aws_launch_template" "template" {
     RABBITMQ_USER_PASSWORD = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["RABBITMQ_USER_PASSWORD"]
     RDS_ENDPOINT           = var.RDS_ENDPOINT
     REDIS_ENDPOINT         = var.REDIS_ENDPOINT
-
   }))
 }
