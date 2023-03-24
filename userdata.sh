@@ -14,3 +14,5 @@ systemctl daemon-reload
 systemctl enable ${COMPONENT}
 systemctl restart ${COMPONENT}
 systemctl restart filebeat
+
+  --//
